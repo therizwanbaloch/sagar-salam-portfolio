@@ -3,10 +3,11 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero'; 
 import SummaryAndSkills from './components/SummaryAndSkills';
 import Experience from './components/Experience';
-import Projects from './components/Projects';
+import Projects from "./Components/Projects"
 import Achievements from './components/Achievements';
 import EducationAndCerts from './components/EducationAndCerts';
 import Footer from './components/Footer';
+import Contact from './Components/Contact';
 
 const RESUME_DATA = {
   name: "SAGAR SALAM",
@@ -52,8 +53,7 @@ export default function Portfolio() {
         </div>
         
       </main>
-
-
+      <Contact/>
       <Footer name={RESUME_DATA.name} />
     </div>
   );

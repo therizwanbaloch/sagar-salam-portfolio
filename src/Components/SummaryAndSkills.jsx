@@ -1,80 +1,73 @@
 import React from 'react';
-import { Code2, Smartphone, Terminal, ShieldAlert } from 'lucide-react';
+import { HiOutlineUser, HiOutlineCpuChip } from 'react-icons/hi2';
 
-export default function SummaryAndSkills({ data = {} }) {
+export default function SummaryAndSkills({ data }) {
+  const { summary, skills } = data || {};
+
   return (
-    <div className="flex flex-col gap-8">
-      {/* Executive Bio */}
-      <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 pb-2 border-b border-slate-100">
-          Professional Context
-        </h2>
-        <p className="text-slate-600 text-sm leading-relaxed text-justify">
-          {data?.summary}
+    <div className="space-y-8 lg:sticky lg:top-28">
+      
+      {/* Professional Context Card */}
+      <div className="p-6 bg-[#090d16]/60 border border-slate-800/80 rounded-2xl space-y-4 shadow-xl">
+        <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-400 uppercase">
+          <HiOutlineUser size={14} />
+          <span>Professional Context</span>
+        </div>
+        <p className="text-slate-300 text-xs md:text-sm leading-relaxed font-normal">
+          {summary || "Accomplished Software Engineer specializing in mobile ecosystems and clean system architecture."}
         </p>
-      </section>
+      </div>
 
-      {/* Tech Pipelines */}
-      <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
-          Core Proficiencies
-        </h2>
-        
-        <div className="space-y-5">
-          <div>
-            <h3 className="text-xs font-bold text-slate-900 uppercase mb-2 flex items-center gap-1.5">
-              <Code2 size={14} className="text-emerald-500" /> Languages
-            </h3>
-            <div className="flex flex-wrap gap-1.5">
-              {data?.skills?.languages?.map((lang, idx) => (
-                <span key={idx} className="bg-slate-100 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-md">
-                  {lang}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-bold text-slate-900 uppercase mb-2 flex items-center gap-1.5">
-              <Smartphone size={14} className="text-emerald-500" /> Android Frameworks
-            </h3>
-            <div className="flex flex-wrap gap-1.5">
-              {data?.skills?.android?.map((lib, idx) => (
-                <span key={idx} className="bg-emerald-50 text-emerald-800 text-xs font-semibold px-2.5 py-1 rounded-md">
-                  {lib}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-bold text-slate-900 uppercase mb-2 flex items-center gap-1.5">
-              <Terminal size={14} className="text-emerald-500" /> Environment & Tools
-            </h3>
-            <div className="flex flex-wrap gap-1.5">
-              {data?.skills?.tools?.map((tool, idx) => (
-                <span key={idx} className="bg-slate-100 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-md">
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </div>
+      {/* Core Proficiencies Card */}
+      <div className="p-6 bg-[#090d16]/60 border border-slate-800/80 rounded-2xl space-y-6 shadow-xl">
+        <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-400 uppercase">
+          <HiOutlineCpuChip size={14} />
+          <span>Core Proficiencies</span>
         </div>
-      </section>
 
-      {/* Soft Traits */}
-      <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
-          Professional Strengths
-        </h2>
-        <div className="flex flex-wrap gap-1.5">
-          {data?.skills?.professional?.map((strength, idx) => (
-            <span key={idx} className="border border-slate-200 text-slate-600 text-xs font-medium px-2.5 py-1 rounded-md bg-slate-50/50">
-              {strength}
-            </span>
-          ))}
+        {/* Technical Sub-categories */}
+        <div className="space-y-4">
+          {skills?.languages && (
+            <div className="space-y-2">
+              <h4 className="text-[11px] font-mono uppercase tracking-wider text-slate-500">Languages</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {skills.languages.map((lang, i) => (
+                  <span key={i} className="text-xs bg-slate-950 px-2.5 py-1 rounded-md text-slate-300 border border-slate-900">
+                    {lang}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {skills?.android && (
+            <div className="space-y-2">
+              <h4 className="text-[11px] font-mono uppercase tracking-wider text-slate-500">Android Ecosystem</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {skills.android.map((lib, i) => (
+                  <span key={i} className="text-xs bg-slate-950 px-2.5 py-1 rounded-md text-emerald-400/90 border border-slate-900">
+                    {lib}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {skills?.tools && (
+            <div className="space-y-2">
+              <h4 className="text-[11px] font-mono uppercase tracking-wider text-slate-500">Development Tools</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {skills.tools.map((tool, i) => (
+                  <span key={i} className="text-xs bg-slate-950 px-2.5 py-1 rounded-md text-slate-400 border border-slate-900">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      </section>
+
+      </div>
     </div>
   );
 }
