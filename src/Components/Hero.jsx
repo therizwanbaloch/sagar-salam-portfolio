@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaLinkedinIn, FaEnvelope } from 'react-icons/fa6';
-import { HiMapPin, HiCommandLine } from 'react-icons/hi2'; 
+import { FaLinkedinIn, FaEnvelope, FaDownload } from 'react-icons/fa6';
+import { HiMapPin, HiCommandLine, HiArrowRight } from 'react-icons/hi2'; 
+import sagar from "../assets/sagar.jpeg";
 
 export default function Hero({ data = {} }) {
   return (
@@ -12,7 +13,7 @@ export default function Hero({ data = {} }) {
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
-        {/* LEFT COLUMN: Clean typography & High-Impact Copy (7 Columns) */}
+        {/* LEFT COLUMN: Clean typography & High-Impact Copy */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2.5 bg-slate-900/60 border border-slate-800/80 px-3.5 py-1.5 rounded-full text-xs font-medium tracking-wide text-emerald-400 backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]"></span>
@@ -33,28 +34,34 @@ export default function Hero({ data = {} }) {
             {data?.summary || "Accomplished Software Engineer specializing in high-performance application architectures and clean, structured engineering paradigms. Dedicated to implementing Clean Architecture and SOLID principles to build robust, scalable products."}
           </p>
 
-          {/* Minimalist Meta Row */}
-          <div className="flex flex-wrap items-center gap-6 text-xs text-slate-400 font-mono pt-2">
-            <div className="flex items-center gap-2 bg-slate-900/40 px-3 py-1.5 rounded-md border border-slate-800/50">
-              <HiMapPin className="text-emerald-400" size={14} />
-              <span>{data?.contact?.location || "Bahawalpur, Pakistan"}</span>
-            </div>
+          {/* Action Links & Metadata Row */}
+          <div className="flex flex-wrap items-center gap-3 pt-2">
             <a 
-              href={`mailto:${data?.contact?.email}`} 
-              className="flex items-center gap-2 bg-slate-900/40 px-3 py-1.5 rounded-md border border-slate-800/50 hover:border-emerald-500/50 hover:text-white transition-all duration-300"
+              href="#contact" 
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold px-5 py-2.5 rounded-xl hover:opacity-90 active:scale-[0.98] transition-all text-sm shadow-lg shadow-emerald-500/10"
             >
-              <FaEnvelope className="text-emerald-400" size={13} />
-              <span>{data?.contact?.email || "sagarsalam531@gmail.com"}</span>
+              <span>Connect System</span>
+              <HiArrowRight size={14} />
+            </a>
+
+            <a 
+              href={sagar} 
+              download="Sagar_Salam_Resume.jpg"
+              className="inline-flex items-center gap-2 bg-slate-900/60 hover:bg-slate-900/90 text-slate-300 font-medium px-5 py-2.5 rounded-xl border border-slate-800/80 hover:border-slate-700/80 active:scale-[0.98] transition-all text-sm"
+            >
+              <FaDownload className="text-emerald-400" size={12} />
+              <span>Download Resume</span>
             </a>
           </div>
+
         </div>
 
-        {/* RIGHT COLUMN: Premium Cyber-Glass IDE Window (5 Columns) */}
+        {/* RIGHT COLUMN: Premium Cyber-Glass IDE Window */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
           <div className="relative w-full max-w-[360px] aspect-square group">
             
             {/* Vibrant Outer Neon Glow Edge */}
-            <div className="absolute -inset-2 bg-gradient-to-tr from-emerald-500 to-teal-500 rounded-3xl blur-xl opacity-20 group-hover:opacity-35 transition-all duration-700"></div>
+            <div className="absolute -inset-2 bg-gradient-to-tr from-emerald-500 to-teal-500 rounded-3xl blur-xl opacity-20 transition-all duration-700"></div>
             
             {/* Mock Editor IDE Outer Container */}
             <div className="absolute inset-0 bg-[#0b0f19]/90 border border-slate-800/80 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl flex flex-col">
@@ -67,7 +74,7 @@ export default function Hero({ data = {} }) {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]/70"></span>
                 </div>
                 <div className="flex items-center gap-1 text-slate-400">
-                  <HiCommandLine size={12} className="text-slate-500" /> {/* Fixed icon token here */}
+                  <HiCommandLine size={12} className="text-slate-500" />
                   <span>Profile.kt</span>
                 </div>
                 <span className="opacity-0">•••</span>
@@ -75,7 +82,7 @@ export default function Hero({ data = {} }) {
 
               {/* Picture Viewport Canvas Area */}
               <div className="relative flex-1 p-4 flex items-center justify-center bg-gradient-to-b from-[#0b0f19] to-[#04060d]">
-                <div className="relative w-full h-full rounded-xl overflow-hidden group/img border border-slate-800/60">
+                <div className="relative w-full h-full rounded-xl overflow-hidden border border-slate-800/60">
                   
                   {/* Subtle code watermark behind portrait */}
                   <div className="absolute inset-x-3 top-3 font-mono text-[10px] text-slate-800 select-none leading-normal opacity-40 pointer-events-none hidden sm:block">
@@ -85,10 +92,10 @@ export default function Hero({ data = {} }) {
                     <div>{"}"}</div>
                   </div>
 
-                  <img 
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
+                  <img
+                    src={sagar}
                     alt={data?.name || "Sagar Salam"} 
-                    className="w-full h-full object-cover filter grayscale contrast-125 brightness-90 mix-blend-luminosity group-hover/img:mix-blend-normal group-hover/img:grayscale-0 group-hover/img:scale-100 scale-105 transition-all duration-700"
+                    className="w-full h-full object-cover"
                   />
                   
                   {/* Digital Vignette Shading */}

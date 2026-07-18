@@ -2,19 +2,25 @@ import React from 'react';
 import { HiOutlineFolderOpen, HiArrowUpRight, HiCommandLine } from 'react-icons/hi2';
 
 export default function Projects() {
-  // Hardcoded production-ready project logs
+  // Hardcoded real engineering project logs
   const projects = [
     {
       title: 'Android Modular Learning Apps',
       category: 'Mobile Infrastructure / EdTech',
-      description: 'Designed a highly scalable lesson-topic structure engineered specifically for offline-first learning environments. Focused heavily on robust navigation graphs, modular code division, and frustration-free user experiences (UX) with dynamic fallback rendering logic for future-proof system stability.',
-      tech: ['Kotlin', 'Android SDK', 'Jetpack Compose', 'Firebase', 'Clean Architecture']
+      description: 'A highly scalable, offline-first educational application designed specifically for seamless performance in low-connectivity regions. The platform features a modular lesson-topic architecture, robust navigation flows, and fallback rendering logic to guarantee a frustration-free user experience. Built using Clean Architecture and SOLID principles, it successfully bridges high-impact EdTech solutions with legacy device optimization.',
+      tech: ['Kotlin', 'Android SDK', 'Jetpack Compose', 'Firebase', 'Clean Architecture', 'SOLID Principles', 'Offline-First UI']
     },
     {
-      title: 'Flutter Gaming App (Tic Tac Toe)',
-      category: 'Cross-Platform Game Logic',
-      description: 'Developed a clean, interactive multiplayer experience featuring fully responsive UI layouts and ultra-fast local game-state validation. Implemented complete state management cycles, automatic win-detection models, and seamless restart game flows across variable screens.',
-      tech: ['Flutter', 'Dart', 'State Management', 'Responsive Design', 'Local Logic']
+      title: 'AI Surrogate Clone (Digital Twin)',
+      category: 'Intelligent Systems / Automation',
+      description: 'An intelligent, offline-first React application engineered to act as a personal digital twin. Featuring a mobile-first, WhatsApp-inspired user interface with full light and dark mode flexibility, it is powered by the Google Gemini API with complex system routing instructions. The platform parses natural language into structured JSON payloads to drive a multi-agent system (Chat, Schedule, Docs, Email, Search, Payment, and Finance), dynamically handling multi-modal user input, locally persisting data, and integrating the Web Speech API.',
+      tech: ['React 19 (Vite)', 'Google GenAI SDK', 'Tailwind CSS', 'Recharts', 'Web Speech API', 'LocalStorage', 'JSON Intent Routing']
+    },
+    {
+      title: 'AFlix — All-in-One Media & IPTV Streaming',
+      category: 'API Aggregation / Network Systems',
+      description: 'A comprehensive, ad-filtered streaming and download application engineered with a lightweight, dark-themed user interface. The app integrates and aggregates streaming data from multiple third-party servers to offer an extensive library of content alongside live TV channels. Designed for high availability and low latency, it features a unified cross-server search engine, integrated link-solving caches to bypass ad-shorteners, smart ad-blocking filters, age-verification routing, and an automated background code-updating subsystem.',
+      tech: ['Java', 'HTML/CSS', 'WebView Architecture', 'API Aggregation', 'IPTV M3U', 'Core AdBlocker', 'Android TV']
     }
   ];
 
@@ -35,7 +41,7 @@ export default function Projects() {
             </span>
           </h2>
           <p className="text-slate-400 text-sm max-w-xl leading-relaxed">
-            A selective collection of structural layouts, mobile applications, and system designs built with strict code standards.
+            A selective collection of structural layouts, intelligent systems, and scalable code bases built to strict engineering standards.
           </p>
         </div>
 
